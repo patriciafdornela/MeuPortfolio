@@ -1,0 +1,197 @@
+/* Reset */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: #f4f4f9;
+    line-height: 1.6;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #8e44ad;
+    padding: 1em 0;
+}
+
+#menu {
+    text-align: center;
+}
+
+#menu a {
+    color: #fff;
+    text-decoration: none;
+    padding: 1em 2em;
+    margin: 0.5em;
+    background-color: #8e44ad;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#menu a:hover {
+    background-color: #DDA0DD;
+}
+
+#eu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2em;
+}
+
+img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    margin-right: 2em;
+}
+
+.meusDados {
+    font-size: 1.2em;
+    max-width: 600px;
+}
+
+h2, h3 {
+    margin-top: 1em;
+}
+
+section {
+    padding: 2em 10%;
+    text-align: center;
+}
+
+/* Cards */
+.card-container {
+    display: flex;
+    gap: 2em;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2em;
+}
+
+/* Estilo básico do card */
+.card {
+    width: 300px;
+    height: 250px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    perspective: 1000px; /* Projeção 3D */
+    transition: transform 0.6s;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.card-front, .card-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #8e44ad;  /* Mesma cor para a frente e verso */
+    color: white;
+    backface-visibility: hidden; /* Oculta a parte de trás quando virado */
+}
+
+.card-back {
+    transform: rotateY(180deg); /* Gira a parte de trás para que não apareça inicialmente */
+}
+
+/* Quando o card for virado */
+.card.flip .card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Estilo para o conteúdo da lista */
+ul {
+    text-align: left;
+    padding: 10px;
+}
+
+/* Botão de voltar ao topo */
+#botaoVoltarParaInicio {
+    position: fixed;
+    right: 2em;
+    bottom: 2em;
+    background-color: #8e44ad;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    color: #fff;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease;
+}
+
+#botaoVoltarParaInicio:hover {
+    background-color: #DDA0DD;
+}
+
+/* Estilo do rodapé */
+footer {
+    text-align: center;
+    padding: 2em;
+    background-color: #8e44ad;
+    color: white;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+    margin: 0.5em;
+    font-size: 1.5em;
+}
+
+footer button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    #menu {
+        display: flex;
+        justify-content: space-around;
+        padding: 1em;
+    }
+
+    .card-container {
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    .card {
+        width: 100%;
+        height: auto;
+    }
+
+    #eu {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    img {
+        width: 150px;
+        height: 150px;
+        margin-bottom: 1em;
+    }
+}
